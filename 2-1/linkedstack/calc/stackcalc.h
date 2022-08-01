@@ -3,7 +3,7 @@
 
 #include "../linkedstack.h"
 
-typedef enum PrecedenceType 
+typedef enum PrecedenceType
 {
 	lparen,
 	rparen,
