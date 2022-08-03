@@ -1,4 +1,4 @@
-#include "linkedstack.h"
+#include "mapdef.h"
 #include <stdlib.h>
 
 void	deleteLinkedStack(LinkedStack* pStack)

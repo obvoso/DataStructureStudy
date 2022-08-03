@@ -1,4 +1,4 @@
-#include "linkedstack.h"
+#include "mapdef.h"
 #include <stdlib.h>
 
 StackNode* peekLS(LinkedStack* pStack)
