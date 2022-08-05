@@ -10,7 +10,7 @@ void deleteArrayQueue(ArrayQueue* pQueue)
 		;
 	else
 	{
-		while (isArrayQueueEmpty(pQueue))
+		while (!isArrayQueueEmpty(pQueue))
 		{
 			del = dequeueAQ(pQueue);
 			free(del);
