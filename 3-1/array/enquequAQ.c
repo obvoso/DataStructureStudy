@@ -7,7 +7,8 @@ int enqueueAQ(ArrayQueue* pQueue, ArrayQueueNode element)
 	if (isArrayQueueFull(pQueue))
 		return (FALSE);
 	pQueue->pElement[pQueue->rear].data = element.data;
-	pQueue->rear = (pQueue->rear + 1) % pQueue->maxElementCount;
+	if (!isArrayQueueEmpty(pQueue))
+		pQueue->rear = (pQueue->rear + 1) % pQueue->maxElementCount;
 	pQueue->currentElementCount++;
 	return (TRUE);
 }

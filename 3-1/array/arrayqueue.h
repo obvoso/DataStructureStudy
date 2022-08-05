@@ -14,7 +14,7 @@ typedef struct ArrayQueueType
 	int currentElementCount;
 	int front;
 	int rear;
-	ArrayQueueNode *pElement;	
+	ArrayQueueNode *pElement;
 } ArrayQueue;
 
 ArrayQueue* createArrayQueue(int maxElementCount);
