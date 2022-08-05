@@ -8,10 +8,11 @@ ArrayQueueNode *dequeueAQ(ArrayQueue* pQueue)
 		return (FALSE);
 	if (isArrayQueueEmpty(pQueue))
 		return (FALSE);
-	pQueue->front = (pQueue->front + 1) % pQueue->maxElementCount;
 	ret = (ArrayQueueNode *)malloc(sizeof(ArrayQueueNode));
 	if (!ret)
 		return (FALSE);
 	ret->data = pQueue->pElement[pQueue->front].data;
+	pQueue->front = (pQueue->front + 1) % pQueue->maxElementCount;
+	pQueue->currentElementCount--;
 	return (ret);
 }

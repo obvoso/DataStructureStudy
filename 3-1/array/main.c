@@ -7,7 +7,7 @@ int	main()
 	ArrayQueueNode element;
 	ArrayQueueNode *tmp;
 
-	pQueue = createArrayQueue(5);
+	pQueue = createArrayQueue(4);
 	if (!pQueue)
 		return (1);
 	for(int i = 0; i < 5; i++)
