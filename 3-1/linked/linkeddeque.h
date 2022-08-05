@@ -1,6 +1,8 @@
 #ifndef _LINKED_DEQUE_
 #define _LINKED_DEQUE_
 
+#include <stdlib.h>
+
 typedef struct DequeNodeType
 {
 	char data;
