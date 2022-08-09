@@ -18,8 +18,6 @@ DequeNode* processServiceNodeStart(int currentTime, LinkedDeque *pWaitDeque)
 	pServiceNode = deleteFrontLD(pWaitDeque);
 	pServiceNode->data.startTime = currentTime;
 	pServiceNode->data.endTime = pServiceNode->data.arrivalTime + pServiceNode->data.serviceTime;
-	// printf(" %d %d\n", pServiceNode->data.arrivalTime, pServiceNode->data.serviceTime);
-	// printf("endtime : %d\n", pServiceNode->data.endTime);
 	pServiceNode->data.status = start;
 	return (pServiceNode);
 }
@@ -83,7 +81,6 @@ int	main()
 {
 	LinkedDeque *pWaitDeque;
 	LinkedDeque *pArrivalDeque;
-	LinkedDeque	*pEndDeque;
 	DequeNode *pServiceNode;
 	int	pServiceUserCount = 0;
 	int	pTotalWaitTime = 0;
@@ -96,9 +93,6 @@ int	main()
 	pArrivalDeque = createLinkedDeque();
 	if (!pArrivalDeque)
 		return (-1);
-	pEndDeque = createLinkedDeque();
-	if (!pEndDeque)
-		return (-1);
 	initArrival(pArrivalDeque);
 	while (t <= 10 && pServiceUserCount <= 5)
 	{
@@ -107,9 +101,8 @@ int	main()
 			processArrival(t, pArrivalDeque, pWaitDeque);
 		if (pServiceNode && pServiceNode->data.endTime == t)
 		{
-		//printWaitDequeStatus(t, pWaitDeque);
+		// printWaitDequeStatus(t, pWaitDeque);
 			pServiceNode->data.status = end;
-			insertRearLD(pEndDeque, *pServiceNode);
 			processServiceNodeEnd(t, pServiceNode, &pServiceUserCount, &pTotalWaitTime);
 			free(pServiceNode);
 			pServiceNode = NULL;
